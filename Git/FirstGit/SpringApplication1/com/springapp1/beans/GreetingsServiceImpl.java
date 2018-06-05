@@ -26,7 +26,7 @@ public class GreetingsServiceImpl implements GreetingService{
 	
 	@Override
 	public void sayGreeting() {
-		System.out.println("Hai User"+ this.greetingMessage);
+		System.out.println("Hai User "+ this.greetingMessage);
 	}
 
 }
