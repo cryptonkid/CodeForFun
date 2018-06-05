@@ -1,0 +1,40 @@
+How to create the project in Spring ?
+=========================================
+1) Expose the Interface which will be consumed by clinet/App code to create beans. 
+2) Implement the interface using both consturctor based bean intialization and setter based bean intialization.
+3) Add all the necessary jars so that the Client and create a beanFactory or ApplicationContext and work.
+
+How to create xml:
+=================
+1) create and empty xml file then add 
+	a) xmlns: i.e. "xml nAME sPACE" and copy the "targetNameSpace"  from local dump of "Spring/schema/beans/xsd"
+	b) name space should also define 
+		xsi:schemaLocation="{namespace}{schema}" 
+	 	- namespace is : xmlns: in the xsd downloaded 
+		- schema is online location for it which is a http://www.springframework.org/schema/beans/spring version xsd.
+		
+2) All the beans related to settings and JavaBeans are written between <beans></beans> tag
+3) 3 element as child for beans are bean,import,alias.
+4.i) All the bean attributes are defined in beanAttributes "note: id is note present"
+	<xsd:attribute name="name" type="xsd:string">
+	<xsd:attribute name="class" type="xsd:string">
+	<xsd:attribute name="parent" type="xsd:string">
+	<xsd:attribute name="scope" type="xsd:string">
+	<xsd:attribute name="abstract" type="xsd:boolean">
+	<xsd:attribute name="lazy-init" default="default" type="defaultable-boolean">
+	<xsd:attribute name="autowire" default="default">
+	<xsd:attribute name="depends-on" type="xsd:string">
+	<xsd:attribute name="autowire-candidate" default="default" type="defaultable-boolean">
+	<xsd:attribute name="primary" type="xsd:boolean">
+	<xsd:attribute name="init-method" type="xsd:string">
+	<xsd:attribute name="destroy-method" type="xsd:string">
+	<xsd:attribute name="factory-method" type="xsd:string">
+	<xsd:attribute name="factory-bean" type="xsd:string">
+	
+4.ii) All the child elements are present in beanElements
+				<xsd:element ref="meta"/>
+				<xsd:element ref="constructor-arg"/>
+				<xsd:element ref="property"/>
+				<xsd:element ref="qualifier"/>
+				<xsd:element ref="lookup-method"/>
+				<xsd:element ref="replaced-method"/>	
