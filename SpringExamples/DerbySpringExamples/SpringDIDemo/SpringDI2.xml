@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="hondaCar"
+		class="com.vivek.spring.beans.HondaCar">
+		<!-- Setter Based DI using InnerBean -->
+		
+			<property name="onBoardEngine">
+				<bean class="com.vivek.spring.engine.PetrolEngine"/>	
+			</property>
+		<!-- Equivalent : HondaCar hondaCar(id) = new HondaCar().setOnBoardEngine(PetrolEngine);
+			 Hence inner bean is inside	 -->
+		
+</bean>
+
+<bean id="hindustanCar" class="com.vivek.spring.beans.HindustanCar">
+	<!-- constructor based DI -->
+	<constructor-arg>
+		<ref value="com.vivek.spring.engine.DieselEngine"/>		
+	</constructor-arg>
+	
+</bean>
+
+</beans>
