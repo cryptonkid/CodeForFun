@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="
+      http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+      http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<bean id="school" 
+	class="com.vivek.spring.beans.SingletonBean" scope="singleton" 
+	init-method="init" destroy-method="destroy">
+		<constructor-arg value="narayana"/>
+		<property name="address" value="kaggadaspura" />
+	</bean>
+	
+	<bean id="student1"
+	class="com.vivek.spring.beans.PrototypeBean" scope="prototype">
+		<property name="firstName" value="kiana"/>
+		<property name="nickName" value="bebo"/>
+	</bean>
+
+</beans>
