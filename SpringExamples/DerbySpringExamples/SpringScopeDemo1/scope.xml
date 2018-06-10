@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<bean id="m1"
+	  class="com.vivek.spring.scopedemo.bean.SingletonDemo"
+	  scope="singleton">
+		<property name="message1" value="First Message"/>
+		<property name="message2" value="Second Message"/>	  
+</bean>
+<bean id="m2"
+	  class="com.vivek.spring.scopedemo.bean.prototypeDemo"
+	  scope="prototype">
+		<property name="fname" value="Vivek	"/>
+		<property name="lname" value="Singh"/>	  
+</bean>
+</beans>
